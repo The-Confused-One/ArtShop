@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "428578619378",
+    "project_id": "artshop-87ce3",
+    "storage_bucket": "artshop-87ce3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428578619378:android:fe14a6a3881cc2e648756b",
+        "android_client_info": {
+          "package_name": "com.example.artshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428578619378-3i7nregunr2ufmvv2mcpc6ljv6li410g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artshop",
+            "certificate_hash": "a7f345f3de1acc1bb0839378b64de1e72cc065f8"
+          }
+        },
+        {
+          "client_id": "428578619378-4cd8h7f0aompk4nd03tq7b2drr0om5ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuaVSDvhHddYkqI__PFRVzNfVtIMvTxXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428578619378-4cd8h7f0aompk4nd03tq7b2drr0om5ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

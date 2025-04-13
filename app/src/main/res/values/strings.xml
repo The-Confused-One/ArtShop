@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ArtShop</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="passwordConfirm">Confirm password</string>
+    <string name="registration">Registration</string>
+    <string name="email">E-mail</string>
+    <string name="cancel">Cancel</string>
+    <string name="phone_number">Phone number</string>
+    <string name="address">Address</string>
+    <string name="buyer">Buyer</string>
+    <string name="seller">Seller</string>
+    <string name="items">Items</string>
+    <string name="apple_description">Apple description</string>
+    <string name="car_description">Car description</string>
+    <string name="cat_description">Cat description</string>
+    <string name="scissor_description">Scissor description</string>
+    <string name="login_as_a_guest">Login as a Guest</string>
+    <string name="login_with_google">Login with Google</string>
+</resources>

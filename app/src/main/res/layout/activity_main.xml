@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".RegisterActivity"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:minHeight="@dimen/default_min_height"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:minHeight="@dimen/default_min_height"
+            app:layout_constraintBottom_toTopOf="@+id/loginButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="30dp"
+            android:onClick="login"
+            android:text="@string/login"
+            app:layout_constraintBottom_toTopOf="@+id/guestLoginButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+        <Button
+            android:id="@+id/guestLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:onClick="guestLogin"
+            android:text="@string/login_as_a_guest"
+            app:layout_constraintBottom_toTopOf="@+id/registerButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:onClick="register"
+            android:text="@string/register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guestLoginButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

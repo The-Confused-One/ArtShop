@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/registerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:minHeight="@dimen/default_min_height"
+            android:padding="@dimen/title_padding"
+            android:text="@string/registration"
+            android:textAlignment="center"
+            android:textSize="@dimen/title_text_size"/>
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:minHeight="@dimen/default_min_height"/>
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:minHeight="@dimen/default_min_height"/>
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:minHeight="@dimen/default_min_height"/>
+
+        <EditText
+            android:id="@+id/editTextPasswordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/passwordConfirm"
+            android:inputType="textPassword"
+            android:minHeight="@dimen/default_min_height"/>
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:minHeight="@dimen/default_min_height"/>
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:ems="12"
+            android:maxLines="3"
+            android:hint="@string/address"
+            android:inputType="textPostalAddress|textMultiLine"
+            android:minHeight="@dimen/default_min_height"/>
+
+        <RadioGroup
+            android:id="@+id/groupAccountType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginLeft="@dimen/default_margin_horiz"
+            android:layout_marginRight="@dimen/default_margin_horiz"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/buyerRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/buyer"
+                android:minWidth="120dp"
+                android:padding="20dp"/>
+
+            <RadioButton
+                android:id="@+id/sellerRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seller"
+                android:minWidth="120dp"
+                android:padding="20dp"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_vert"
+            android:layout_marginTop="@dimen/default_margin_vert"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin_horiz"
+                android:layout_marginRight="@dimen/default_margin_horiz"
+                android:minWidth="120dp"
+                android:text="@string/register"
+                android:onClick="register"/>
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin_horiz"
+                android:layout_marginRight="@dimen/default_margin_horiz"
+                android:minWidth="120dp"
+                android:text="@string/cancel"
+                android:onClick="cancel" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
