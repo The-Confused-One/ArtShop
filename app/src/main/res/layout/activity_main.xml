@@ -33,7 +33,6 @@
             app:layout_constraintVertical_bias="0.50"
             app:layout_constraintVertical_chainStyle="packed" />
 
-
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
@@ -83,7 +82,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginButton" />
-
 
         <Button
             android:id="@+id/registerButton"
