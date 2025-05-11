@@ -1,7 +1,6 @@
 package com.example.artshop;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,22 +10,15 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String LOG_TAG = RegisterActivity.class.getName();
-    private static final String PREF_KEY = MainActivity.class.getPackage().toString();
     EditText userNameEditText;
     EditText emailEditText;
     EditText passwordEditText;
@@ -34,7 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText phoneEditText;
     EditText addressEditText;
     RadioGroup accountTypeGroup;
-    private SharedPreferences preferences;
     private FirebaseAuth mAuth;
 
     @Override
@@ -57,11 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
         accountTypeGroup = findViewById(R.id.groupAccountType);
         accountTypeGroup.check(R.id.buyerRadioButton);
 
-        preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
-        String userName = preferences.getString("userName", "");
-
-        userNameEditText.setText(userName);
-
         mAuth = FirebaseAuth.getInstance();
 
         Log.i(LOG_TAG, "onCreate");
@@ -83,16 +69,13 @@ public class RegisterActivity extends AppCompatActivity {
         if (password.equals(passwordConfirm)){
             Log.i(LOG_TAG, "Registered: "+ userName + ", email: "+ email + ", password: " + password + ", phone: " + phone + ", address: " + address + ", account type: " + accountType);
 
-            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        Log.d(LOG_TAG, "User registered successfully.");
-                        startShopping();
-                    } else {
-                        Log.d(LOG_TAG, "User registration failed.");
-                        Toast.makeText(RegisterActivity.this, "User registration failed." + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                    }
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
+                if (task.isSuccessful()){
+                    Log.d(LOG_TAG, "User registered successfully.");
+                    startShopping();
+                } else {
+                    Log.d(LOG_TAG, "User registration failed.");
+                    Toast.makeText(RegisterActivity.this, "User registration failed." + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -103,9 +86,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void cancel(View view) {
         finish();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
-    private void startShopping(/* registered user data */){
+    private void startShopping(){
         Intent intent = new Intent(this, ShopListActivity.class);
         startActivity(intent);
     }
